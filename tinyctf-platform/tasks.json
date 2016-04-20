@@ -1,0 +1,179 @@
+{"categories": [
+    {"id": 0, "name": "Web.", "short_name": "Web", "tasks": [
+        {
+            "id": 0, 
+            "row": 0,
+            "name": "huan'ying'lai'dao", 
+            "score": "50",
+            "flag": "nuaactf{We1cOme_t0_the_p1ay}",
+            "desc": "白菜哥是个粗心的程序员，他不小心把flag留在了本页当中，<script src=\"/js/web50.js\"></script>试着找找吧！",
+            "show": 1
+        },
+        {
+            "id": 1, 
+            "row": 1,
+            "name": "百度一下，你就知道", 
+            "score": "50",
+            "flag": "nuaactf{/web2/ceba6fbbf0ede43252641cd336e36a03}",
+            "desc": "白菜哥是个急性子，而且又没钱买fan qiang线路，于是只能用百度搜索本题的flag",
+            "file": "",
+            "show": 1
+        },
+        {
+            "id": 2, 
+            "row": 2,
+            "name": "不是bug是feature", 
+            "score": "100",
+            "flag": "nuaactf{/web3/b481b86354a413b898b6f01af539366d}",
+            "desc": "白菜哥粗心又大意，还是个倔脾气，每次写出来bug都对别人解释成是feature，这可气坏了他的产品经理。",
+            "file": "",
+            "show": 1
+        },
+        {
+            "id": 3, 
+            "row": 3,
+            "name": "笨笨的程序猿", 
+            "score": "100",
+            "flag": "nuaactf{hApPy_haCk1n9_t0Day}",
+            "desc": "白菜哥有个好基友叫曾老师，曾老师一点都不笨，才不会留下这么明显的漏洞呢。",
+            "file": "",
+            "show": 1
+        },
+        {
+            "id": 4, 
+            "row": 4,
+            "name": "你从哪里来，我的朋友。", 
+            "score": "200",
+            "flag": "nuaactf{C0ndrulation!_y0u_f1n1shed_a11_web_quest}",
+            "desc": "你从哪里来，我的朋友？我从http://cs.nuaa.edu.cn来的。",
+            "file": "",
+            "show": 1
+        }
+    ]},
+    {"id": 1, "name": "Reverse", "short_name": "Rev", "tasks": [
+        {
+            "id": 5, 
+            "row": 1,
+            "name": "曾老师的Android课", 
+            "score": "100",
+            "flag": "nuaactf{Happy_crack1ng_app!}",
+            "desc": "曾老师某个暑假选了一门移动开发课，于是他就把这个flag藏进了app里。",
+            "file": "reverse1.apk",
+            "show": 1
+        },
+        {
+            "id": 6, 
+            "row": 2,
+            "name": "奇妙的声音", 
+            "score": "200",
+            "flag": "nuaactf{sh0rt_f1Ag}",
+            "desc": "你能听到么？flag在呼唤着你。",
+            "file": "reverse2.apk",
+            "show": 0
+        },
+        {
+            "id": 7, 
+            "row": 3,
+            "name": "不喜欢写界面的白菜哥", 
+            "score": "300",
+            "flag": "NUAACTF{HAPPYCRACK1NGCHHARP}",
+            "desc": "白菜哥不喜欢写界面。所以他特别喜欢脱脱拽拽就能产生界面的编程语言。",
+            "file": "reverse3.exe",
+            "show": 0
+        },
+        {
+            "id": 8, 
+            "row": 4,
+            "name": "你猜我猜你猜我猜不猜", 
+            "score": "400",
+            "flag": "nuaactf{Asur1_Pr0tect_Y0u}",
+            "desc": "你猜猜这是什么？ktaauqb{Apto1_Mo0qiuq_Y0t}",
+            "file": "reverse4.macho",
+            "show": 0
+        }
+    ]},
+    {"id": 2, "name": "Pwn", "short_name": "Pwn", "tasks": [
+        {
+            "id": 9, 
+            "row": 1,
+            "name": "乱码！乱码！", 
+            "score": "100",
+            "flag": "nuaactf{Isnt_js_FunNy>?}",
+            "desc": "Asuri团队在一次渗透测试中，发现了一个乱码文件，据说系统的root密码就存在这个文件中。你能帮Asuri找出这个密码么？",
+            "file": "pwn1.txt",
+            "show": 1
+        },
+        {
+            "id": 10, 
+            "row": 2,
+            "name": "回家的路", 
+            "score": "200",
+            "flag": "nuaactf{1159}",
+            "desc": "<br>一个数据包迷路了，你能告诉它回家的路么?<br>文件第一行四个数分别是站点数(从零开始编号)，路径数，出发点，到达点。<br>随后每行为两个站点编号和两个站点间路径的距离。<br>你能告诉这个数据包，他回家的路么？<br>提示，flag为nuaactf{路径长度}",
+            "file": "pwn2.in",
+            "show": 0
+        },
+        {
+            "id": 11, 
+            "row": 3,
+            "name": "神奇的服务器", 
+            "score": "300",
+            "flag": "nuaactf{explo1t_a_l0t_fun}",
+            "desc": "nc 211.65.102.2 43321 来研究研究这台神奇的服务器吧",
+            "file": "pwn3.elf",
+            "show": 0
+        },
+        {
+            "id": 12, 
+            "row": 4,
+            "name": "解密", 
+            "score": "400",
+            "flag": "nuaactf{M4tr1X_15_gRe4t}",
+            "desc": "曾老师从一台服务器上解压了这个文件，并且通过分析了解到了前1000行是一个矩阵，后面是对这个矩阵做一些操作，是交换某两行、交换某两列、求某一行的和和求某一列的和，并且发现操作完后得到的结果很奇怪。你能告诉曾老师这到底是什么么？",
+            "file": "pwn4.in",
+            "show": 0
+        }
+    ]},
+    {"id": 3, "name": "Misc", "short_name": "Misc", "tasks": [
+        {
+            "id": 13, 
+            "row": 1,
+            "name": "奇怪的压缩包", 
+            "score": "100",
+            "flag": "nuaactf{Hello_MISC_nOt_RAR}",
+            "desc": "这是一个神奇的压缩包，你能发现这到底是什么么？",
+            "file": "misc1.rar",
+            "show": 1
+        },
+        {
+            "id": 14, 
+            "row": 2,
+            "name": "奇怪的图片", 
+            "score": "200",
+            "flag": "nuaactf{z1p_0vEr_Png_1s_fun}",
+            "desc": "这是一个奇怪的图片，你能发现这到底是什么么？",
+            "file": "misc2.png",
+            "show": 0
+        },
+        {
+            "id": 15, 
+            "row": 3,
+            "name": "更奇怪的图片", 
+            "score": "300",
+            "flag": "nuaactf{qrc0de_in_C011ect1on!}",
+            "desc": "据说flag就藏在这张图片中喔",
+            "file": "misc3.png",
+            "show": 0
+        },
+        {
+            "id": 16, 
+            "row": 4,
+            "name": "讨厌的APP", 
+            "score": "400",
+            "flag": "nuaactf{f**K_mE_D0nG_sp0rt!}",
+            "desc": "听说南京有几个学校每个学生手机里都有个奇怪的APP，Asuri团队从这个app中发现了一条奇怪的数据传输。但是没有成功的解密。你能帮他们解密这条数据么？<br>b9ce19c99b648f0725a5beb44936dd8ad01e4a285b511689db3e2bf6bcad737dd23000a3d3c367d44ff4f602c0e7f215",
+            "file": "pwn400.zip",
+            "show": 0
+        }
+    ]}
+]}
