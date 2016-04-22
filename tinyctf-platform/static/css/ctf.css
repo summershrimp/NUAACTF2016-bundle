@@ -128,3 +128,24 @@ background-size: cover;
 .task-box h5 {
     text-align: center;
 }
+
+/*
+ * Scoreboard
+ */
+ 
+ .status {
+     display: inline-block;
+     width: 18px;
+     line-height: 12px;
+     font-size: 12px;
+     vertical-align: middle;
+     text-align: center;
+     height: 18px;
+     background-color: red;
+     border-radius: 10px;
+     margin:0 2px;
+ }
+ .status.ok{
+     background-color: green;
+ }
+ 

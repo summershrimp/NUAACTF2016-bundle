@@ -4,10 +4,11 @@
     "host": "0.0.0.0",
     "port": 8888,
     
-    "db": "sqlite:///ctf.db",
+    
+    "db": "mysql://platform:cCstCtF2o16@127.0.0.1/platform?charset=utf8",
     
     "language_file": "lang.json",
     "language": "english",
 
-    "debug": false
+    "debug": true
 }

@@ -3,5 +3,6 @@ DIRNAME="$( dirname "$S0")"
 DIR="$( cd "$DIRNAME" && pwd)"
 
 cd $DIR
-python task_import.py tasks.json
+python task_import.py
+python user_import.py
 python server.py

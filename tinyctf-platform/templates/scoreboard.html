@@ -3,18 +3,50 @@
     <thead>
       <tr>
         <th>&#35;</th>
-        <th>{{ lang.scoreboard.player }}</th>
+        <th>{{ lang.scoreboard.team }}</th>
         <th>{{ lang.scoreboard.score }}</th>
+        <th>{{ lang.scoreboard.tasks }}</th>
       </tr>
     </thead>
     <tbody>
       {% for user in scores %}
       <tr>
         <td>{{ loop.index }}</td>
-        <td>{{ user.username }}</td>
+        <td>{{ user.showname }}</td>
         <td>{{ user.score }}</td>
+        <td data-tasks="{{ user.tasks }}" class="flag"></td>
       </tr>
       {% endfor %}
     </tbody>
   </table>
 </div>
+<div class='hidden tasks'>
+{% for task in tasks %}
+  <div data-id="{{ task.id }}" data-name="{{ task.name }}" data-score="{{ task.score }}"></div>
+{% endfor %}
+</div>
+
+<script>
+  $(function(){
+    var teams = $("tr td.flag");
+    var tasks = $(".hidden.tasks div");
+    teams.each(function(){
+      var team = $(this);
+      var scores = team.data("tasks").split(',');
+      var e = {};
+      for(i in scores) {
+        var s = scores[i].split('|');
+        e[s[0]] = parseInt(s[1]);
+      }
+      tasks.each(function(){
+        var task = $(this);
+        if(e[task.data("id")] > 0)
+          team.append($("<i class=\"status ok\" title=\"" + task.data("name") + " Score:" + e[task.data("id")] + "\"></i>"));
+        else
+          team.append($("<i class=\"status\" title=\"" + task.data("name") + " Score:" + task.data("score") + "\"></i>"));
+      });
+    });
+    
+  });
+  
+</script>

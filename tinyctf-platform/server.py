@@ -122,7 +122,7 @@ def login():
 
     return redirect('/error/invalid_credentials')
 
-@app.route('/register')
+#@app.route('/register')
 def register():
     """Displays the register form"""
 
@@ -131,7 +131,7 @@ def register():
         page='register.html', login=False)
     return make_response(render) 
 
-@app.route('/register/submit', methods = ['POST'])
+#@app.route('/register/submit', methods = ['POST'])
 def register_submit():
     """Attempts to register a new user"""
 
@@ -139,6 +139,7 @@ def register_submit():
 
     username = request.form['user']
     password = request.form['password']
+    showname = request.form['showname']
 
     if not username:
         return redirect('/error/empty_user')
@@ -148,7 +149,8 @@ def register_submit():
         return redirect('/error/already_registered')
             
     new_user = dict(hidden=0, username=username, 
-        password=generate_password_hash(password))
+        password=generate_password_hash(password),
+        showname=showname )
     db['users'].insert(new_user)
 
     # Set up the user id for this session
@@ -213,7 +215,6 @@ def task(category, row):
 
     solutions = db['flags'].find(task_id=task['id'])
     solutions = len(list(solutions))
-
     # Render template
     render = render_template('frame.html', lang=lang, page='task.html', 
         task_done=task_done, login=login, solutions=solutions,
@@ -224,8 +225,6 @@ def task(category, row):
 @login_required
 def submit(category, row, flag):
     """Handles the submission of flags"""
-
-    print "ok"
 
     login, user = get_user()
 
@@ -239,7 +238,6 @@ def submit(category, row, flag):
         timestamp = int(time.time() * 1000)
         bonus = get_bonus(task)
         score = int(task['score']) + bonus
-        print score 
         # Insert flag
         new_flag = dict(task_id=task['id'], user_id=session['user_id'], 
             score=score, timestamp=timestamp)
@@ -255,16 +253,19 @@ def scoreboard():
     """Displays the scoreboard"""
 
     login, user = get_user()
-    scores = db.query('''select u.username, ifnull(sum(f.score), 0) as score, 
-        max(timestamp) as last_submit from users u left join flags f 
-        on u.id = f.user_id where u.hidden = 0 group by u.username 
+    scores = db.query('''select u.username, u.showname, ifnull(sum(f.score), 0) as score,
+        max(timestamp) as last_submit, group_concat(concat(f.task_id,'|',f.score)) as tasks from users u left join flags f 
+        on u.id = f.user_id where u.hidden = 0 group by u.username, u.showname
         order by score desc, last_submit asc''')
-
+    tasks = db.query('''select c.id as cat_id, t.id as id, concat(c.short_name,t.row) as name,
+        t.score from categories c, tasks t, cat_task c_t 
+        where c.id = c_t.cat_id and t.id = c_t.task_id order by id asc''')
+        
     scores = list(scores)
 
     # Render template
     render = render_template('frame.html', lang=lang, page='scoreboard.html', 
-        login=login, user=user, scores=scores)
+        login=login, user=user, scores=scores, tasks=tasks)
     return make_response(render) 
 
 @app.route('/about')

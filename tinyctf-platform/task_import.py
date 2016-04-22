@@ -20,9 +20,12 @@ if __name__ == '__main__':
     # Load the json structure
     tasks_str = open('tasks.json', 'rb').read()
     tasks_json = json.loads(tasks_str)
+    
+    config_str = open('config.json', 'rb').read()
+    config = json.loads(config_str)
 
     # Connect to database
-    db = dataset.connect('sqlite:///ctf.db')
+    db = dataset.connect(config['db'])
     cat_table = db['categories']
     tasks_table = db['tasks']
     cat_task_table = db['cat_task']

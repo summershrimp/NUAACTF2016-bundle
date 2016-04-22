@@ -35,7 +35,9 @@
         "scoreboard": {
             "title": "Scoreboard",
             "player": "Player",
-            "score": "Score"
+            "score": "Score",
+            "tasks": "Tasks",
+            "team": "Team"
         },
         "error": {
             "title": "Error",

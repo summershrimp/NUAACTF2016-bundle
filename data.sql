@@ -1,8 +1,11 @@
 SET NAMES utf8;
 SET FOREIGN_KEY_CHECKS = 0;
 
+CREATE DATABASE IF NOT EXISTS platform DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+GRANT ALL PRIVILEGES ON platform.* TO platform@127.0.0.1 identified by 'cCstCtF2o16';
+
 CREATE DATABASE IF NOT EXISTS nuaactf DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-GRANT ALL PRIVILEGES ON nuaactf.* TO nuaactf@127.0.0.1 identified by 'dfasdfgasdfbdsfgsdkmladfkajnsvuasdlasd';
+GRANT SELECT ON nuaactf.* TO nuaactf@127.0.0.1 identified by 'dfasdfgasdfbdsfgsdkmladfkajnsvuasdlasd';
 
 USE nuaactf;
 -- ----------------------------
