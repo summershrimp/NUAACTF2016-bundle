@@ -1,8 +1,9 @@
 <div class="landing-page container">
-  <table class="table table-striped">
+  <table class="table">
     <thead>
       <tr>
-        <th>&#35;</th>
+        <th>Rank</th>
+	<th>ID</th>
         <th>{{ lang.scoreboard.team }}</th>
         <th>{{ lang.scoreboard.score }}</th>
         <th>{{ lang.scoreboard.tasks }}</th>
@@ -12,6 +13,7 @@
       {% for user in scores %}
       <tr>
         <td>{{ loop.index }}</td>
+	<td>{{ user.username }}</td>
         <td>{{ user.showname }}</td>
         <td>{{ user.score }}</td>
         <td data-tasks="{{ user.tasks }}" class="flag"></td>

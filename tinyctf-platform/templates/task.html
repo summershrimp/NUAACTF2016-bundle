@@ -1,7 +1,6 @@
 <div class="landing-page container">
   <div class="row">
-    <div class="task-box col-md-6 col-md-offset-3" 
-      data-category="{{ category|lower }}" data-row="{{ row }}">
+    <div class="task-box" data-category="{{ category|lower }}" data-row="{{ row }}">
       <h1>{{ task.name }}</h1>
       <h5>({{ category }}{{ score }}, 
         {{ lang.task.solution_format % solutions }})</h5>
@@ -34,7 +33,5 @@
     </div>
   </div>
 </div>
-<span class="lang" data-success="{{ lang.task.success }}" 
-  data-failure="{{ lang.task.failure }}"></span>
-<script src="{{ url_for('static', filename='js/submit.js') }}" 
-    type='text/javascript'></script>
+<span class="lang" data-success="{{ lang.task.success }}" data-failure="{{ lang.task.failure }}"></span>
+<script src="{{ url_for('static', filename='js/submit.js') }}"></script>
