@@ -248,7 +248,7 @@ def submit(category, row, flag):
     return jsonify(result)
 
 @app.route('/scoreboard')
-@login_required
+#@login_required
 def scoreboard():
     """Displays the scoreboard"""
 
